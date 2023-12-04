@@ -38,3 +38,10 @@ for r in range(PW_LOW, PW_HIGH + 1):
         except:
             print("File Processing Error")
 
+fp.close()
+
+elapsedTime = time.time() - startTime
+print("Single Core Rainbow Complete")
+print("Elapsed time:",elapsedTime)
+print("Passwords Generated:", pwCount)
+print()
