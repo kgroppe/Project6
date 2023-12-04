@@ -1,8 +1,16 @@
-print("Hello World")
+import hashlib
+import time
+import sys
+import os
+import itertools
 
+chars = ['a','b','c','d','e','f','g','h']
 
-line = "To sit in solomn silence, on a dull dark dock, with a pestulencent presence of a short, sharp shock."
+SALT = "&45Bvx9"
+PW_LOW = 4
+PW_HIGH = 8
 
-for char in line:
-    print(char)
-
+print("Processing Single Core")
+print(os.getcwd())
+print("Password Caracter Set: ", chars)
+print("Password Lengths: ", str(PW_LOW), " - ", str(PW_HIGH))
