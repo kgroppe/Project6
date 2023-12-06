@@ -47,7 +47,6 @@ except IOError:
     print("File Handling Error")
     fp.close()
 
-
 elapsedTime = time.time() - startTime
 print("Elapsed TIme: ", elapsedTime)
 print("Passwords Generated: ", len(pwDict))
@@ -60,3 +59,7 @@ for key,value in (pwDict.items()):
     if cnt > 10:
         break
     print()
+
+pw = pwDict.get('1dbdfd6de15b28f247ec7e1ec571b9f49098b82a6be400baa0fe0e44aedc4e1c')
+print("Hash Value Tested = 1dbdfd6de15b28f247ec7e1ec571b9f49098b82a6be400baa0fe0e44aedc4e1c")
+print("Associated Password = ", pw)
