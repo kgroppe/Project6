@@ -8,7 +8,7 @@ numbers = ['0','1','2','3']
 special = ['!','@','#','$']
 allCharacters = lowerCase + upperCase + numbers + special
 
-DIR = 'C:\\'
+DIR = 'pw\\'
 
 SALT = "&45Bvx9"
 PW_LOW = 2
@@ -30,7 +30,33 @@ try:
         sha256Digest = sha256Hash.hexdigest()
         fp.write(sha256Digest + ' ' + pw + '\n')
         del sha256Hash
-except:
+except IOError:
     print("File Processing Error")
-fp.close() #check placement of this
-    
+finally:
+    fp.close()
+
+pwDict = {}
+
+try:
+    fp = open(DIR +'all', 'r')
+    for line in fp:
+        pairs = line.split()
+        pwDict.update({pairs[0]: pairs[1]})
+    fp.close()
+except IOError:
+    print("File Handling Error")
+    fp.close()
+
+
+elapsedTime = time.time() - startTime
+print("Elapsed TIme: ", elapsedTime)
+print("Passwords Generated: ", len(pwDict))
+print()
+
+cnt = 0
+for key,value in (pwDict.items()):
+    print(key,value)
+    cnt += 1
+    if cnt > 10:
+        break
+    print()
