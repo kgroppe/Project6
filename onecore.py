@@ -1,19 +1,19 @@
 import hashlib
 import time
-import sys
-import os
 import itertools
 
-chars = ['a','b','c','d','e','f','g','h']
+lowerCase = ['a','b','c','d','e','f','g','h']
+upperCase = ['G','H','I','J','K','L']
+numbers = ['0','1','2','3']
+special = ['!','@','#','$']
+allCharacters = lowerCase + upperCase + numbers + special
+
+#DIR = 'C:\\'
 
 SALT = "&45Bvx9"
-PW_LOW = 4
-PW_HIGH = 8
+PW_LOW = 2
+PW_HIGH = 6
 
-print("Processing Single Core")
-print(os.getcwd())
-print("Password Caracter Set:", chars)
-print("Password Lengths:", str(PW_LOW), "-", str(PW_HIGH))
 
 startTime = time.time()
 
