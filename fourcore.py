@@ -43,4 +43,30 @@ if __name__ == "__main__":
 
     pwDict = {}
 
-    
+    for i in range(PW_LOW, PW_HIGH):
+        try:
+            fp = open(DIR+str(i), 'r')
+            for line in fp:
+                pairs = line.split()
+                pwDict.update({pairs[0], pairs[1]})
+            fp.close()
+        except:
+            print("File Handling Error")
+            fp.close()
+
+    elapsedTime = time.time() - startTime
+    print("Elapsed TIme: ", elapsedTime)
+    print("Passwords Generated: ", len(pwDict))
+    print()
+
+    cnt = 0
+    for key, value in (pwDict.items()):
+        print(key, value)
+        cnt += 1
+        if cnt > 10:
+            break
+        print()
+
+    pw = pwDict.get('1dbdfd6de15b28f247ec7e1ec571b9f49098b82a6be400baa0fe0e44aedc4e1c')
+    print("Hash Value Tested = 1dbdfd6de15b28f247ec7e1ec571b9f49098b82a6be400baa0fe0e44aedc4e1c")
+    print("Associated Password = ", pw)
