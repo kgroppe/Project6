@@ -48,7 +48,7 @@ if __name__ == "__main__":
             fp = open(DIR+str(i), 'r')
             for line in fp:
                 pairs = line.split()
-                pwDict.update({pairs[0], pairs[1]})
+                pwDict.update({pairs[0]: pairs[1]})
             fp.close()
         except:
             print("File Handling Error")
