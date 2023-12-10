@@ -26,7 +26,7 @@ try:
     fp = open(DIR+'all','w')
     for pw in pwList:
         sha256Hash = hashlib.sha256()
-        sha256Hash.update(SALT + pw)
+        sha256Hash.update((SALT + pw).encode())
         sha256Digest = sha256Hash.hexdigest()
         fp.write(sha256Digest + ' ' + pw + '\n')
         del sha256Hash
