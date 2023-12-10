@@ -58,7 +58,7 @@ for key,value in (pwDict.items()):
     cnt += 1
     if cnt > 10:
         break
-    print()
+print()
 
 pw = pwDict.get('1dbdfd6de15b28f247ec7e1ec571b9f49098b82a6be400baa0fe0e44aedc4e1c')
 print("Hash Value Tested = 1dbdfd6de15b28f247ec7e1ec571b9f49098b82a6be400baa0fe0e44aedc4e1c")
