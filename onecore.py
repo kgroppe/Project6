@@ -30,8 +30,10 @@ try:
         sha256Digest = sha256Hash.hexdigest()
         fp.write(sha256Digest + ' ' + pw + '\n')
         del sha256Hash
+    fp.close()
 except IOError:
     print("File Processing Error")
+    fp.close()
 finally:
     fp.close()
 
